@@ -13,7 +13,7 @@ const cuota12 = x => x / 12
 const cuota24 = x => x / 24
 const cuota48 = x => x / 48
 
-while (continuar != "n" && continuar == "s") {
+while ((continuar == "s")&&(continuar != "n")) {
    console.clear()
    vehiculo = elegir_auto()
    while (vehiculo == "Null") {
@@ -57,11 +57,11 @@ function calcular(ivehiculo, iplan, ientrega) {
    if (monto > ientrega && iplan == "total") {
       iplan = "No Aplica"
    }
-   if (monto < ientrega && iplan == "total"){
+   if (monto < ientrega && iplan == "total") {
       iplan = "Pago Total"
    }
 
-   
+
 
    switch (iplan) {
       case "12 meses":
@@ -81,7 +81,7 @@ function calcular(ivehiculo, iplan, ientrega) {
          break
       case "Pago Total":
          resto = ientrega - monto
-         observacion = "Esta entregando mas dinero"      
+         observacion = "Esta entregando mas dinero"
          break
       case "0":
          observacion = "El monto ingregresado es mayor que el costo del vehiculo"
@@ -102,7 +102,7 @@ function calcular(ivehiculo, iplan, ientrega) {
    console.log("Valor de la cuota es: $" + valorcuota.toFixed(1))
    console.log("Observación: " + observacion)
    console.log("Diferencia: $" + resto.toFixed(1))
-  
+
 }
 
 
