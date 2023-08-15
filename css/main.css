@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Anuphan;
+    src: url(../assets/font/Anuphan.ttf);
+  }
+
+body{
+    margin: 10px;
+}  
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+a {
+  font-family: Anuphan;
+  color: rgb(65, 64, 64);
+  text-decoration: none;
+}
+
+.titulo{
+    margin-top: 10px;
+    text-align: center;
+}
