@@ -37,7 +37,7 @@
   <main>
     <div class="container-fluid">
       <h2 class="titulo">Vehiculos disponibles</h2>
-      <table class="table">
+      <table class="table" id="tabla_vehiculos">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
@@ -45,15 +45,14 @@
             <th scope="col">Modelo</th>
             <th scope="col"> </th>
             <th scope="col">Transmisión</th>
-            <th scope="col">Precio Lista</th>
             <th scope="col">Precio Final</th>
             <th scope="col"> </th>
           </tr>
         </thead>
-        <tbody id="cuerpo">         
+        <tbody id="cuerpo">
 
         </tbody>
-      </table>      
+      </table>
     </div>
   </main>
 
@@ -66,54 +65,76 @@
         </div>
         <div class="modal-body">
           <h6>Vehiculo Elegido</h6>
-          <label for="">Marca:</label><br>
-          <label for="">Modelo:</label><br>
-          <label for="">Transmisión:</label><br>
-          <label for="">Precio:</label><br><br>
-          
+
+          <p id="dato"></p><br>
+
           <form id="form_client">
             <h6>Datos personales</h6>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
               <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
               <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
-            </div>              
+            </div>
             <h6>Entrega</h6>
             <div class="input-group mb-3">
               <span class="input-group-text">$</span>
-              <input type="text" class="form-control" id="entrega" aria-label="Pesos">             
-            </div>              
+              <input type="text" class="form-control" id="entrega" aria-label="Pesos">
+            </div>
             <h6>Seleccione un Plan</h6>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  12 Cuotas
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  24 Cuotas
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  36 Cuotas
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  48 Cuotas
-                </label>
-              </div>
-
+            <div class="form-check">
+              <input class="form-check-input" value="12" type="radio" name="flexRadioDefault" id="check_1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                12 Cuotas
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" value="24" type="radio" name="flexRadioDefault" id="check_2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                24 Cuotas
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" value="36" type="radio" name="flexRadioDefault" id="check_3" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                36 Cuotas
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" value="48" type="radio" name="flexRadioDefault" id="check_4" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                48 Cuotas
+              </label>
+            </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary" id="btn_calcular">Calcular</button>
+          <button type="button" id="btn_calcular" class="btn btn-primary">Calcular</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="presupuesto" tabindex="-1" aria-labelledby="presupuestoLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Presupuesto</h5>  
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>        
+        </div>
+        <div class="modal-body">
+          <h6>Vehiculo Elegido</h6>
+          Marca: <p id="marca"></p>
+          Modelo: <p id="modelo"></p>
+          Transmisión: <p id="transmision"></p>
+          Precio Final: $ <p id="preciofin"></p>
+          Entrega: $<p id="entregado"></p>
+          Monto Adeudado: $ <p id="montofin"></p>
+          Plan: <p id="meses"></p>
+          Valor Cuota: $<p id="valorcuota"></p>
+        </div>
+        <div class="modal-footer">          
+          <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -122,6 +143,7 @@
   <footer>
     <p>Copyright 2023 &copy;
   </footer>
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
