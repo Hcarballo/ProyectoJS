@@ -76,7 +76,7 @@ let saludo = ()=>{
       imageHeight: 200,
       imageAlt: 'Custom image',
     })
-    setTimeout(reload,4000)
+    setTimeout(reload,2000)
 }
 
 let reload = () =>{
@@ -179,7 +179,7 @@ btn_calculo.forEach(btn_calculo => {
 btn_close.forEach(btn_close => {
    btn_close.addEventListener('click', () => {
       modal_2.style.display = 'none'
-      setTimeout(saludo,3000)          
+      setTimeout(saludo,1000)          
    })
 })
 
