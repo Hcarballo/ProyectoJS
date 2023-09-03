@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulador Compra</title>
   <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -28,13 +29,14 @@
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="registro.html">Registro</a>
+            <a class="nav-link" href="registro.html">Historial</a>
           </li>
         </ul>
       </div>
     </nav>
   </header>
   <main>
+    <div id="datodolar"></div>
     <div class="container-fluid">
       <h2 class="titulo">Vehiculos disponibles</h2>
       <table class="table" id="tabla_vehiculos">
@@ -61,7 +63,6 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Llenar Formulario</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <h6>Vehiculo Elegido</h6>
@@ -119,31 +120,31 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Presupuesto</h5>  
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>        
+          <h5 class="modal-title">Presupuesto</h5>
         </div>
         <div class="modal-body">
           <h6>Vehiculo Elegido</h6>
+          Fecha: <p id="fecha"></p>
           Marca: <p id="marca"></p>
           Modelo: <p id="modelo"></p>
           Transmisión: <p id="transmision"></p>
           Precio Final: $ <p id="preciofin"></p>
+          Precio Dolar: U$D <p id="preciodolar"></p>
           Entrega: $<p id="entregado"></p>
           Monto Adeudado: $ <p id="montofin"></p>
           Plan: <p id="meses"></p>
           Valor Cuota: $<p id="valorcuota"></p>
         </div>
-        <div class="modal-footer">          
+        <div class="modal-footer">
           <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
-
   <footer>
     <p>Copyright 2023 &copy;
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.2/build/global/luxon.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>

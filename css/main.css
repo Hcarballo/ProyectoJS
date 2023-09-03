@@ -24,3 +24,9 @@ a {
     margin-top: 10px;
     text-align: center;
 }
+
+.dolar{
+  background-color: green;
+  color: rgb(234, 242, 234);
+  padding-left: 3px;
+}
